@@ -1,5 +1,7 @@
 package com.bci.usuario.entrypoints.rest;
 
+import java.time.LocalDate;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bci.usuario.configuration.PasswordValidator;
+import com.bci.usuario.dto.CreatedUserDTO;
 import com.bci.usuario.dto.MessageDTO;
 import com.bci.usuario.dto.UserDTO;
 
@@ -28,13 +31,15 @@ public class UsuarioREST {
 	}
 
 	@PostMapping(path = "", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<MessageDTO<UserDTO>> signup(@RequestBody UserDTO usuario) {
+	public ResponseEntity<MessageDTO<CreatedUserDTO>> signup(@RequestBody UserDTO usuario) {
 		
 		if(logger.isDebugEnabled()) {
 			logger.debug("user: {} wants to sign up.", usuario);
 		}
 		
-		return ResponseEntity.ok(new MessageDTO<UserDTO>(usuario));
+		CreatedUserDTO createdUser = new CreatedUserDTO("ajdfasdf", LocalDate.now(), LocalDate.now(), LocalDate.now(), "token", false);
+		
+		return ResponseEntity.ok(new MessageDTO<CreatedUserDTO>(createdUser));
 	}
 	
 }
