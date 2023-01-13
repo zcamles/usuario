@@ -1,0 +1,9 @@
+sign:
+  patterns:
+    password: ${PASSWORD_PATTERN:^(?=.*[A-Z])(?=.*\d).{6}$}
+logging:
+  level:
+    root: WARN
+    com:
+      bci:
+        usuario: DEBUG

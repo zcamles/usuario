@@ -1,11 +1,13 @@
+spring:
+  profiles:
+    active: ${ENVIRONMENT:local}
+  application:
+    name: sign
 server:
   port: 8080
   servlet:
     context-path: /api/sign
-    
-logging:
-  level:
-    root: WARN
-    com:
-      bci:
-        usuario: DEBUG
+
+sign:
+  patterns:
+    password: ${PASSWORD_PATTERN}
