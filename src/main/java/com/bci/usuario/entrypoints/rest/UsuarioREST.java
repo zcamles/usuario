@@ -39,6 +39,10 @@ public class UsuarioREST {
 		
 		CreatedUserDTO createdUser = new CreatedUserDTO("ajdfasdf", LocalDate.now(), LocalDate.now(), LocalDate.now(), "token", false);
 		
+		if(!createdUser.isActive()) {
+			throw new NullPointerException("asdfasd");
+		}
+		
 		return ResponseEntity.ok(new MessageDTO<CreatedUserDTO>(createdUser));
 	}
 	
