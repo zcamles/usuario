@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bci.usuario.configuration.PasswordValidator;
 import com.bci.usuario.dto.MessageDTO;
-import com.bci.usuario.dto.UsuarioDTO;
+import com.bci.usuario.dto.UserDTO;
 
 @RestController
 @RequestMapping("usuarios")
@@ -28,13 +28,13 @@ public class UsuarioREST {
 	}
 
 	@PostMapping(path = "", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<MessageDTO<UsuarioDTO>> signup(@RequestBody UsuarioDTO usuario) {
+	public ResponseEntity<MessageDTO<UserDTO>> signup(@RequestBody UserDTO usuario) {
 		
 		if(logger.isDebugEnabled()) {
 			logger.debug("user: {} wants to sign up.", usuario);
 		}
 		
-		return ResponseEntity.ok(new MessageDTO<UsuarioDTO>(usuario));
+		return ResponseEntity.ok(new MessageDTO<UserDTO>(usuario));
 	}
 	
 }

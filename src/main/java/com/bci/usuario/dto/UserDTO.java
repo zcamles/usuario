@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class UsuarioDTO {
+public class UserDTO {
 
 	private String name;
 	private String email;
@@ -14,7 +14,7 @@ public class UsuarioDTO {
 	private List<PhoneDTO> phones;
 
 	@JsonCreator(mode = Mode.PROPERTIES)
-	public UsuarioDTO(
+	public UserDTO(
 			@JsonProperty("name") String name,
 			@JsonProperty("email") String email, 
 			@JsonProperty("password") String password, 
