@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bci.usuario.configuration.PasswordValidator;
+import com.bci.usuario.dto.MessageDTO;
 import com.bci.usuario.dto.UsuarioDTO;
 
 @RestController
@@ -27,13 +28,13 @@ public class UsuarioREST {
 	}
 
 	@PostMapping(path = "", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<UsuarioDTO> signup(@RequestBody UsuarioDTO usuario) {
+	public ResponseEntity<MessageDTO<UsuarioDTO>> signup(@RequestBody UsuarioDTO usuario) {
 		
 		if(logger.isDebugEnabled()) {
 			logger.debug("user: {} wants to sign up.", usuario);
 		}
 		
-		return ResponseEntity.ok(usuario);
+		return ResponseEntity.ok(new MessageDTO<UsuarioDTO>(usuario));
 	}
 	
 }
