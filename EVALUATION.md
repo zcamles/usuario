@@ -37,9 +37,9 @@ Todos los mensajes deben seguir el formato:
     - last_login: del último ingreso (en caso de nuevo usuario, va a coincidir con la fecha de creación)
     - token: token de acceso de la API (puede ser UUID o JWT)
     - isactive: Indica si el usuario sigue habilitado dentro del sistema.
-- [ ] Si caso el correo conste en la base de datos, deberá retornar un error "El correo ya registrado".
-- [ ] El correo debe seguir una expresión regular para validar que formato sea el correcto. (aaaaaaa@dominio.cl)
-- [ ] La clave debe seguir una expresión regular para validar que formato sea el correcto.
+- [X] Si caso el correo conste en la base de datos, deberá retornar un error "El correo ya registrado".
+- [X] El correo debe seguir una expresión regular para validar que formato sea el correcto. (aaaaaaa@dominio.cl)
+- [X] La clave debe seguir una expresión regular para validar que formato sea el correcto.
 - [X] El valor de la expresión regular para la contrasena debe ser configurable
 - [ ] El token deberá ser persistido junto con el usuario
 

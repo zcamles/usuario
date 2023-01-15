@@ -5,8 +5,8 @@ SET SCHEMA usuarios;
 CREATE TABLE users ( 
    id UUID PRIMARY KEY, 
    name VARCHAR(50), 
-   email VARCHAR(20), 
-   password DATE,
+   email VARCHAR(20) UNIQUE, 
+   password VARCHAR(20),
    created DATE,
    modified DATE,
    last_login DATE,

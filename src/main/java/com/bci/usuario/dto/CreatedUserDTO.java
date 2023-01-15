@@ -1,13 +1,14 @@
 package com.bci.usuario.dto;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CreatedUserDTO {
 
 	@JsonProperty("id")
-	private String id;
+	private UUID id;
 
 	@JsonProperty("created")
 	private LocalDate created;
@@ -24,7 +25,7 @@ public class CreatedUserDTO {
 	@JsonProperty("isActive")
 	private boolean isActive;
 
-	public CreatedUserDTO(String id, LocalDate created, LocalDate modified, LocalDate lastLogin, String uuid,
+	public CreatedUserDTO(UUID id, LocalDate created, LocalDate modified, LocalDate lastLogin, String uuid,
 			boolean isActive) {
 		this.id = id;
 		this.created = created;
@@ -34,7 +35,7 @@ public class CreatedUserDTO {
 		this.isActive = isActive;
 	}
 
-	public String getId() {
+	public UUID getId() {
 		return id;
 	}
 

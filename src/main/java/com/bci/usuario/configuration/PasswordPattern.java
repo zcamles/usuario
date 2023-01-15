@@ -9,14 +9,14 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.bind.ConstructorBinding;
 
 @ConfigurationProperties(prefix = "sign.patterns")
-public class PasswordValidator {
+public class PasswordPattern {
 
-    private Logger logger = LoggerFactory.getLogger(PasswordValidator.class);
+    private Logger logger = LoggerFactory.getLogger(PasswordPattern.class);
 	
 	private Pattern pattern;
 	
 	@ConstructorBinding
-	public PasswordValidator(String password) {
+	public PasswordPattern(String password) {
 		
 		if(password == null || password.isBlank()) {
 			logger.error("el regex obtenido de los properties es: {}", password);
@@ -33,10 +33,8 @@ public class PasswordValidator {
 		
 	}
 	
-	public boolean validate(String password) {
-		boolean isPasswordCorrect = this.pattern.matcher(password).matches();
-		this.pattern.matcher(password).reset();
-		return isPasswordCorrect;
+	public Pattern getPattern() {
+		return this.pattern;
 	}
 	
 }

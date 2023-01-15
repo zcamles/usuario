@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
-import com.bci.usuario.configuration.PasswordValidator;
+import com.bci.usuario.configuration.PasswordPattern;
 
 @SpringBootApplication
-@EnableConfigurationProperties({PasswordValidator.class})
+@EnableConfigurationProperties({PasswordPattern.class})
 public class UsuarioApplication {
 
 	public static void main(String[] args) {
