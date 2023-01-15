@@ -1,7 +1,5 @@
 package com.bci.usuario.services;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +15,6 @@ import com.bci.usuario.repository.UserRepository;
 @Service
 public class UserService {
 
-	private Logger logger = LoggerFactory.getLogger(UserService.class);
-
 	private PasswordPattern passwordValidator;
 
 	private UserRepository userRepository;
@@ -32,7 +28,10 @@ public class UserService {
 	public CreatedUserDTO signUp(UserDTO user) {
 		Email email = new Email(user.getEmail());
 		
-		//Esto no cubre problema de carreras en sistemas de registro altamente concurridos
+		/**
+		 * Esto no cubre problema de carreras en sistemas de registro altamente concurridos
+		 * En caso de que el sistema requiera de ello habria que capturar la excepcion y iterar hasta dar con las causas necesitadas. 
+		 */
 		if (this.userRepository.existsByEmail(email.getValue())) {
 			throw new EmailAlreadyExists(email.getValue());
 		}

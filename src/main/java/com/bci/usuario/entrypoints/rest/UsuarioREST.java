@@ -1,7 +1,5 @@
 package com.bci.usuario.entrypoints.rest;
 
-import java.time.LocalDate;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bci.usuario.configuration.PasswordPattern;
 import com.bci.usuario.dto.CreatedUserDTO;
 import com.bci.usuario.dto.MessageDTO;
 import com.bci.usuario.dto.UserDTO;
