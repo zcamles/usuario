@@ -3,6 +3,14 @@ spring:
     active: ${ENVIRONMENT:local}
   application:
     name: sign
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    driverClassName: driver
+  jpa:
+    database-platform: dialecto
+    
 server:
   port: 8080
   servlet:
@@ -11,3 +19,5 @@ server:
 sign:
   patterns:
     password: ${PASSWORD_PATTERN}
+    
+

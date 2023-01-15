@@ -1,9 +1,32 @@
+spring:
+  sql:
+    init:
+      schema-locations: classpath:sql/schema.sql
+  datasource:
+    url: ${DATABASE_URL:jdbc:h2:mem:mydb}
+    username: ${DATABASE_URL:user}
+    password: ${DATABASE_URL:password}
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      path: /database
+      enabled: true
+    
 sign:
   patterns:
     password: ${PASSWORD_PATTERN:^(?=.*[A-Z])(?=.*\d).{6}$}
+
 logging:
   level:
     root: WARN
     com:
       bci:
         usuario: DEBUG
+        
+        
+        
+  
