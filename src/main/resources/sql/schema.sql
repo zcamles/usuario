@@ -5,12 +5,12 @@ SET SCHEMA usuarios;
 CREATE TABLE users ( 
    id UUID PRIMARY KEY, 
    name VARCHAR(50), 
-   email VARCHAR(20) UNIQUE, 
+   email VARCHAR(40) UNIQUE, 
    password VARCHAR(20),
    created DATE,
    modified DATE,
    last_login DATE,
-   token VARCHAR(50),
+   token VARCHAR(2048),
    is_active BOOL
 );
 

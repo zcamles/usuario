@@ -10,6 +10,10 @@ spring:
     driverClassName: driver
   jpa:
     database-platform: dialecto
+     
+springdoc:
+  swagger-ui:
+    enabled: true
     
 server:
   port: 8080

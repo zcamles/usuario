@@ -41,7 +41,7 @@ Todos los mensajes deben seguir el formato:
 - [X] El correo debe seguir una expresión regular para validar que formato sea el correcto. (aaaaaaa@dominio.cl)
 - [X] La clave debe seguir una expresión regular para validar que formato sea el correcto.
 - [X] El valor de la expresión regular para la contrasena debe ser configurable
-- [ ] El token deberá ser persistido junto con el usuario
+- [X] El token deberá ser persistido junto con el usuario
 
 ## Requisitos
 - Banco de datos en memoria.

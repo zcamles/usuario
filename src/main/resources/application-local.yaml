@@ -16,7 +16,7 @@ spring:
     console:
       path: /database
       enabled: true
-    
+      
 sign:
   patterns:
     password: ${PASSWORD_PATTERN:^(?=.*[A-Z])(?=.*\d).{6}$}

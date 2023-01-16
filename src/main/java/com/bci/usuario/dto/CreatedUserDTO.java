@@ -1,6 +1,6 @@
 package com.bci.usuario.dto;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,27 +11,27 @@ public class CreatedUserDTO {
 	private UUID id;
 
 	@JsonProperty("created")
-	private LocalDate created;
+	private LocalDateTime created;
 
 	@JsonProperty("modified")
-	private LocalDate modified;
+	private LocalDateTime modified;
 
 	@JsonProperty("lastLogin")
-	private LocalDate lastLogin;
+	private LocalDateTime lastLogin;
 
-	@JsonProperty("uuid")
-	private String uuid;
+	@JsonProperty("token")
+	private String token;
 
 	@JsonProperty("isActive")
 	private boolean isActive;
 
-	public CreatedUserDTO(UUID id, LocalDate created, LocalDate modified, LocalDate lastLogin, String uuid,
+	public CreatedUserDTO(UUID id, LocalDateTime created, LocalDateTime modified, LocalDateTime lastLogin, String token,
 			boolean isActive) {
 		this.id = id;
 		this.created = created;
 		this.modified = modified;
 		this.lastLogin = lastLogin;
-		this.uuid = uuid;
+		this.token = token;
 		this.isActive = isActive;
 	}
 
@@ -39,30 +39,24 @@ public class CreatedUserDTO {
 		return id;
 	}
 
-	public LocalDate getCreated() {
+	public LocalDateTime getCreated() {
 		return created;
 	}
 
-	public LocalDate getModified() {
+	public LocalDateTime getModified() {
 		return modified;
 	}
 
-	public LocalDate getLastLogin() {
+	public LocalDateTime getLastLogin() {
 		return lastLogin;
 	}
 
-	public String getUuid() {
-		return uuid;
+	public String getToken() {
+		return token;
 	}
 
 	public boolean isActive() {
 		return isActive;
-	}
-
-	@Override
-	public String toString() {
-		return "CreatedUserDTO [id=" + id + ", created=" + created + ", modified=" + modified + ", lastLogin="
-				+ lastLogin + ", uuid=" + uuid + ", isActive=" + isActive + "]";
 	}
 
 }

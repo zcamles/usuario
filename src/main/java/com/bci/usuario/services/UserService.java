@@ -18,7 +18,7 @@ public class UserService {
 	private PasswordPattern passwordValidator;
 
 	private UserRepository userRepository;
-
+	
 	@Autowired
 	public UserService(PasswordPattern passwordValidator, UserRepository userRepository) {
 		this.passwordValidator = passwordValidator;
@@ -35,11 +35,11 @@ public class UserService {
 		if (this.userRepository.existsByEmail(email.getValue())) {
 			throw new EmailAlreadyExists(email.getValue());
 		}
-
+		
 		Password password = new Password(passwordValidator.getPattern(), user.getPassword());
 		UserEntity entity = userRepository.save(new UserEntity(user.getName(), email, password));
 		CreatedUserDTO createdUser = new CreatedUserDTO(entity.getId(), entity.getCreated(), entity.getModified(),
-				entity.getLastLogin(), "XXX", entity.isActive());
+				entity.getLastLogin(), entity.getToken(), entity.isActive());
 		return createdUser;
 	}
 
